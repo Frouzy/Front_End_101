@@ -1,0 +1,112 @@
+#headerBox  {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+
+}
+
+.motherBox  {
+  margin-top: 150px;
+  width: 1100px; 
+  margin-left: 300px; 
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+}
+
+/*box 1*/
+
+.box1 {
+  margin: 25px;
+  margin-left: 150px;
+  background-color: #4d5530;
+  width: 200px;
+  height: 200px;
+  border: solid black 5px;
+
+
+}
+.box1:hover{
+  width: 500px;
+  height: 300px;
+  background-color: orange;
+  border: solid black 3px;
+
+
+}
+.box1{
+   transition: all 5s;
+}
+
+
+/*box2*/
+
+.box2{
+  margin: 25px;
+  margin-left: 150px;
+  background-color: #4d5530;
+  width: 200px;
+  height: 200px;
+  border: solid black 5px;
+
+}
+.box2:hover{
+  width: 500px;
+  height: 300px;
+  background-color: orange;
+  border: solid black 3px;
+
+}
+.box2 {
+   transition: all 5s;
+}
+
+/*box3*/
+
+.box3 {
+  margin: 25px;
+  margin-left: 150px; 
+  background-color: #4d5530;
+  width: 200px;
+  height: 200px;
+  border: solid black 5px;
+
+}
+.box3:hover {
+  width: 500px;
+  height: 300px;
+  background-color: orange;
+  border: solid black 3px;
+
+}
+.box3 {
+   transition: all 5s;
+}
+
+
+<div class="container-fluid motherBox">
+     <div class="row">
+            <h1>- My most important education -</h1>
+        <div class="col-xs-3">
+            <div class="box1">
+                <h2>Hi, this is a box</h2>
+            </div>
+        </div>
+
+        <div class="col-xs-3">
+            <div class="box2">
+                <h2>A circle</h2>
+            </div>
+        </div>
+        
+        <div class="col-xs-3">
+            <div class="box3">
+                <h2>Hi, this is a box</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--section Six-->

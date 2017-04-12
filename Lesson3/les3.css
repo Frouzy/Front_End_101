@@ -1,0 +1,85 @@
+body{
+margin: 150px;
+background-color: #ffeadb;
+color: white;
+display: flex;
+justify-content: center;
+text-align: center;
+}
+
+@keyframes transition-class {  /*deze naam geven vb voor javascript, zie slides*/
+  0% {margin-left: 0px; margin-top: 0px;}
+  25% {margin-left: 250px; margin-top: 125px;}
+  50% {margin-left: 500px; margin-top: 250px;}
+/*  100% {margin-left: 200px; margin-top: 200px;}*/
+}
+
+.box1	{
+  margin: 25px;
+  background-color: orange;
+  width: 200px;
+  height: 200px;
+  /*transform: translate(50px, 100px) rotate(-30deg) skewX(60deg) skewY(40deg);*/
+ /*Je moet alles achter elkaar zetten, anders overschrijft hij de voorgaande*/
+  transition: 10s width, 2s height;
+}
+
+.box1:hover	{
+  width: 400px;
+  height: 100px;
+}
+/*
+.box	{
+  transition: 10s width 2s height;
+}*/
+
+/*box2*/
+
+.box2{
+  border-radius: 50%;
+  margin: 25px;
+  background-color: #CCCC33;
+  width: 200px;
+  height: 200px;
+  border: solid black 5px;
+  -webkit-animation-name: move-right;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 2;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+
+}
+.box2:hover{
+  width: 400px;
+  height: 100px;
+  background-color: #0E0EFF;
+  border: solid red 3px;
+
+}
+.box2{
+	 transition: all 5s;
+}
+box3
+
+.box3{
+  margin: 25px;
+  background-color: orange;
+  width: 200px;
+  height: 200px;
+  -webkit-animation-name: move-right;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 2;
+  -webkit-animation-play-state: running;
+}
+
+.box3:hover{
+  width: 400px;
+  height: 100px;
+}
+.box3{
+  transition: 5s width ease-in;
+}
+
+
