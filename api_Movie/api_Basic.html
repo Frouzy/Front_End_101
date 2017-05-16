@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Movie</title>
+<link rel="stylesheet" href="style_api.css">
+<link href="https://static.fd.nl/assets/118/css/fd.fonts.css" rel="stylesheet">
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+ 
+<script type="text/javascript">
+    $(document).ready(function() {
+ 
+        $("#searchBar").keyup(function() {
+            var searchMovie = $("#searchBar").val();
+        $.getJSON("https://api.themoviedb.org/3/search/movie?",
+        {
+            query: searchMovie,
+            api_key: "b2713be22a0c06726651efdcb040ecaa",
+            language: "en-US",
+        },
+        function (response) {
+            console.log(response);
+            //TITLE
+            $("#t1").html(response.results[0].title);
+            $("#t2").html(response.results[1].title);
+            $("#t3").html(response.results[2].title);
+            //DATE
+            $("#y1").html(response.results[0].release_date).slice(4);
+            $("#y2").html(response.results[1].release_date);
+            $("#y3").html(response.results[2].release_date);
+            //POSTER
+            $('#p1').css('background-image','url(https://image.tmdb.org/t/p/w500/' + response.results[0].poster_path + ')');
+            $('#p2').css('background-image','url(https://image.tmdb.org/t/p/w500/' + response.results[1].poster_path + ')');
+            $('#p3').css('background-image','url(https://image.tmdb.org/t/p/w500/' + response.results[2].poster_path + ')');
+            //RATING
+            $("#r1").html(response.results[0].vote_average);
+            $("#r2").html(response.results[1].vote_average);
+            $("#r3").html(response.results[2].vote_average);
+            //DESCRIPTION
+            $("#d1").html(response.results[0].overview);
+            $("#d2").html(response.results[1].overview);
+            $("#d3").html(response.results[2].overview);
+        });    
+        });
+    });
+</script>
+
+</head>
+
+<body>
+    
+<div class="wrapper">Search<br>
+<input type="text" id="searchBar">
+    
+    <div class="movie_container">
+        <div class="movie_entry">
+            <div class="movie_title" id="t1"></div>
+            <div class="movie_year" id="y1"></div>
+            <div class="movie_poster" id="p1"></div>
+            <div class="movie_desc" id="d1"></div>
+            <div class="movie_rating" id="r1"></div>
+        </div>
+        <div class="movie_entry">
+            <div class="movie_title" id="t2"></div>
+            <div class="movie_year" id="y2"></div>
+            <div class="movie_poster" id="p2"></div>
+            <div class="movie_desc" id="d2"></div>
+            <div class="movie_rating" id="r2"></div>
+        </div>
+        <div class="movie_entry">
+            <div class="movie_title" id="t3"></div>
+            <div class="movie_year" id="y3"></div>
+            <div class="movie_poster" id="p3"></div>
+            <div class="movie_desc" id="d3"></div>
+            <div class="movie_rating" id="r3"></div>
+            
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
